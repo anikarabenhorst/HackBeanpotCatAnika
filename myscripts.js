@@ -33,6 +33,14 @@ function saveform() {
     }) 
 
     var results = runAlgo(newNames);
+    document.getElementById("result-location").innerHTML = newNames[0];
+    document.getElementById("result-pop").innerHTML = newNames[1];
+    document.getElementById("result-pp").innerHTML = newNames[2];
+    document.getElementById("result-f-13-44").innerHTML = newNames[3];
+    document.getElementById("result-likely").innerHTML = newNames[4];
+    document.getElementById("result-poverty").innerHTML = newNames[5];
+    document.getElementById("result-young").innerHTML = newNames[0];
+
 }
 
 function runAlgo(newNames) {
