@@ -4,7 +4,7 @@ import pandas as pd
 
 ########################################################################################################################
 
-gtm_df = pd.read_excel(r'C:\Users\cpmus\HackBeanpotCatAnika\Datasets\GuttmacherDataCenter.xlsx')
+gtm_df = pd.read_excel("~/Desktop/code/HackBeanpotCatAnika/Datasets/GuttmacherDataCenter.xlsx")
 
 gtm_df = gtm_df[['U.S. County',
                  'Population of women aged 13-44, 2016',
@@ -39,7 +39,7 @@ gtm_df['No. of women who likely need public ' +
 
 ########################################################################################################################
 
-mass_census_df = pd.read_excel(r'C:\Users\cpmus\HackBeanpotCatAnika\Datasets\county-population-mass-census-and-estimates.xlsx')
+mass_census_df = pd.read_excel("~/Desktop/code/HackBeanpotCatAnika/Datasets/county-population-mass-census-and-estimates.xlsx")
 
 mass_census_df = mass_census_df.rename(columns=mass_census_df.iloc[0]).drop(mass_census_df.index[0])
 
