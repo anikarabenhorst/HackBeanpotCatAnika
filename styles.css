@@ -4,8 +4,7 @@
 }
 
 :root {
-    --background-white: rgb(241, 241, 241);
-    --topbar-black: black;
+    --background-white:white;
 
 }
 
@@ -15,13 +14,38 @@ body {
 }
 
 .navbar {
-    background-color: #0377C0;
-}
-
-a.navbar-brand {
+    background-color: #EC5096;
     color: white;
 }
 
-li.nav-item {
-    color : white;
+.infinite-scroll {
+    margin-left: 3px;
+}
+
+[draggable] {
+    user-select: none;
+}
+
+h4 {
+    margin-top: 15px;
+    color: #242E64;
+}
+
+form {
+    margin:0;
+    width:50%;
+    text-align:center;
+}
+
+li.option {
+    list-style-type:none;
+    margin:2px;
+    color: #DBDEE1;
+    background-color:#257CBC;
+    border:2px double #257CBC;
+}
+
+p.result-location {
+    color: EC5096;
+    font-size: 40px;
 }

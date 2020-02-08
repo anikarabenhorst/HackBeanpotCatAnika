@@ -12,6 +12,9 @@
     <!--Your CSS-->
     <link rel="stylesheet" href="styles.css">
 
+    <script src="myscripts.js">
+    </script>
+
     <title>Planning Planned Parenthood</title>
     <meta name="description" content="My website">
     <meta name="author" content="Anika Rabenhorst">
@@ -30,7 +33,11 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#map">The Map</a>
+                    <a class="nav-link" href="#algo">Use the Algorithm</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#your-results">Your Results</a>
                 </li>
                 
                 <li class="nav-item">
@@ -50,19 +57,53 @@
 
     <div data-spy="scroll" class="infinite-scroll" data-target="#navbar" data-offset="0">
 
-        <h4 id="map">The Map</h4>
-        <p></p>
-        <div class="container">
-            <div class="row">
+        <h4 id="algo">Use the Algorithm</h4>
+        <p>Drag and drop the following factors by what you think is most important for choosing a new Planned Parenthood Location.
+            Information is by individual counties of Massachusetts. Order by most important to least important from top to bottom.
+        </p>
 
-            </div>
-            <p></p>
+        <form action="#your-results" onsubmit="return(saveform())" >
+            <ul class="listbox">
+            <li class="option" draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)" ondrop="dropped(event)">
+            New County</li>
+            <li class="option" draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)" ondrop="dropped(event)">
+            Population</li>
+            <li class="option" draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)" ondrop="dropped(event)">
+            Population of Women Aged 13-44</li>
+            <li class="option" draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)" ondrop="dropped(event)">
+            Number of women who likely need public support for contraceptive services and supplies, aged 13-44</li>
+            <li class="option" draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)">
+            Number of women who likely need public support for contraceptive services and supplies, aged 20-44 and below the federal poverty level</li>
+            <li class="option" draggable="true" ondragstart="dragStarted(event)" ondragover="draggingOver(event)">
+            Number of women who likely need public support for contraceptive services and supplies, younger than 20</li>
+            </ul>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <h4 id="your-results">Your Results</h4>
+        <p> You should get funding for a new Planned Parenthood in</p>
+        <p class="result-location">here</p>
+        <div class="county-info">
+            <p>New County:</p>
+            <p>Population:</p>
+            <p>Females Ages 13-44:</p>
+            <p>Number of women who likely need public support for contraceptive services and supplies, aged 13-44:</p>
+            <p>Number of women who likely need public support for contraceptive services and supplies, aged 20-44 and below the federal poverty level:</p>
+            <p>Number of women who likely need public support for contraceptive services and supplies, younger than 20</p>
         </div>
 
         <h4 id="about">About The Project</h4>
-        <p></p>
+        <p> This project was created by <strong>Anika Rabenhorst</strong> and <strong>Caterina Wang</strong> for Hack Beanpot 2020.
+         The goal was to generate an algorithm for selecting a location to put a new Planned Parenthood 
+         based on the user's personal preferrences for how it should be selected. 
+         We then took those preferences and weighted them to choose the best possible county. 
+         This would be a useful tool for Planned Parenthood if they were to recieve enough funding to open a fifth location within Massachusetts. 
+         Additionally, it could demonstrate to local officials the need for more publicly funded health clinics in general.
+        </p>
 
     </div>
+
+    
 
 
     <!-- Optional JavaScript -->
