@@ -1,0 +1,15 @@
+.infinite-scroll {
+    margin-top: 66px;
+
+}
+
+:root {
+    --background-white: rgb(241, 241, 241);
+    --topbar-black: black;
+
+}
+
+body {
+    margin: 0;
+    background: var(--background-white);
+}
