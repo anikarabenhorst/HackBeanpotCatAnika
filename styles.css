@@ -20,8 +20,14 @@ body {
 }
 
 .jumbotron {
-    background-image: url("/img/unamed.jpg");
+    background-image: url(/img/jumbo.jpg);
+    height: 600px;
     background-size: cover;
+}
+
+.display-4 {
+    color: #267CBC;
+    font-family: 'Francois One', sans-serif;
 }
 
 .infinite-scroll {
@@ -35,10 +41,11 @@ body {
 
 h4 {
     margin-top: 15px;
-    color: #242E64;
+    color: #1461A7;
     text-align: center;
     font-family: 'Francois One', sans-serif;
 }
+
 
 form {
     margin: auto;
@@ -52,7 +59,7 @@ li.option {
     margin-right: 35px;
     margin-bottom: 2px;
     color: #DBDEE1;
-    background-color:#257CBC;
+    background-color:#267CBC;
     
 }
 
