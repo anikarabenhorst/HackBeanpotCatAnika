@@ -9,7 +9,7 @@
 }
 
 body {
-    margin: 0;
+    margin: auto;
     background: var(--background-white);
 }
 
@@ -19,7 +19,8 @@ body {
 }
 
 .infinite-scroll {
-    margin-left: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 [draggable] {
@@ -29,20 +30,23 @@ body {
 h4 {
     margin-top: 15px;
     color: #242E64;
+    text-align: center;
 }
 
 form {
-    margin: 0;
-    width:50%;
+    margin: auto;
+    width:70%;
     text-align:center;
 }
 
 li.option {
     list-style-type:none;
-    margin:2px;
+    margin-left: 0px;
+    margin-right: 35px;
+    margin-bottom: 2px;
     color: #DBDEE1;
     background-color:#257CBC;
-    border:2px double #257CBC;
+    
 }
 
 p.result-location {
