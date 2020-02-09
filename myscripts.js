@@ -61,22 +61,18 @@ function dropped(evt){
 
 function saveform() {
     var listItems = document.querySelectorAll(".listbox li");
-    console.log(listItems);
     var names = [];
         
     listItems.forEach((item) => {
         names.push(item.innerHTML.trim());
     })
-    console.log(names);
 
     var newNames = names.map(function(val, index){ 
         return {key:index, value: val}; 
     }) 
 
-    console.log(newNames[1].key);
     var results = runAlgo(newNames);
 
-    console.log(results);
     document.getElementById("result-location").innerHTML = results[0];
     document.getElementById("result-pp").innerHTML = results[1];
     document.getElementById("result-pop").innerHTML = results[2];
@@ -119,7 +115,6 @@ function runAlgo(newNames) {
                 break;                
         }
     } 
-    console.log(pop);
 
     if (noPP <= 3) {
         df = [
@@ -141,10 +136,8 @@ function runAlgo(newNames) {
     }
 
     var importances = [pop, pop13to44f, support13to44, belowPov, supportBelow20];
-    console.log(importances);
 
     for (var j = 0; j < importances.length; j++) {
-        console.log(importances[j]);
         var curr = importances[j];
         if (curr > noPP) {
             curr = curr - 1;
@@ -169,7 +162,6 @@ function runAlgo(newNames) {
         importances[j] = curr;
             
     }
-    console.log(importances);
 
     var weights = [];
 
@@ -178,18 +170,14 @@ function runAlgo(newNames) {
         var popProp = curr[2] / maPOP;
 
         var w = (importances[0]*popProp) + (importances[1]*curr[7]) + (importances[2]*curr[8]) +  (importances[3]*curr[9]) + (importances[4]*curr[10]);
-        console.log(w);
         weights.push(w);
     }
-    console.log(weights);
 
     // get index of max weight and add 1
     var max = weights.reduce(function(a,b) {
         return Math.max(a, b)
     });
     var m = weights.indexOf(max) - 1;
-
-    console.log(df[m]);
 
     var notYet = makeString(df[m][1]); 
 

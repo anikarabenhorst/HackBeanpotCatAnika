@@ -9,7 +9,7 @@
 }
 
 body {
-    margin: 0;
+    margin: auto;
     background: var(--background-white);
 }
 
@@ -28,11 +28,12 @@ body {
 
 h4 {
     margin-top: 15px;
+    text-align: center;
     color: #242E64;
 }
 
 form {
-    margin:0;
+    margin: auto;
     width:50%;
     text-align:center;
 }
