@@ -15,7 +15,13 @@ body {
 
 .navbar {
     background-color: #EC5096;
+    font-family: 'Francois One', sans-serif;
     color: white;
+}
+
+.jumbotron {
+    background-image: url("/img/unamed.jpg");
+    background-size: cover;
 }
 
 .infinite-scroll {
@@ -31,6 +37,7 @@ h4 {
     margin-top: 15px;
     color: #242E64;
     text-align: center;
+    font-family: 'Francois One', sans-serif;
 }
 
 form {
