@@ -28,18 +28,19 @@ function saveform() {
     })
     console.log(names);
 
-    var newNames = arr.map(function(val, index){ 
+    var newNames = names.map(function(val, index){ 
         return {key:index, value: val}; 
     }) 
 
     var results = runAlgo(newNames);
-    document.getElementById("result-location").innerHTML = newNames[0];
-    document.getElementById("result-pop").innerHTML = newNames[1];
-    document.getElementById("result-pp").innerHTML = newNames[2];
-    document.getElementById("result-f-13-44").innerHTML = newNames[3];
-    document.getElementById("result-likely").innerHTML = newNames[4];
-    document.getElementById("result-poverty").innerHTML = newNames[5];
-    document.getElementById("result-young").innerHTML = newNames[0];
+    console.log(results);
+    document.getElementById("result-location").innerHTML = results[0];
+    document.getElementById("result-pp").innerHTML = results[1];
+    document.getElementById("result-pop").innerHTML = results[2];
+    document.getElementById("result-f-13-44").innerHTML = results[3];
+    document.getElementById("result-likely").innerHTML = results[4];
+    document.getElementById("result-poverty").innerHTML = results[5];
+    document.getElementById("result-young").innerHTML = results[6];
 
 }
 
@@ -51,7 +52,7 @@ function runAlgo(newNames) {
     var belowPov;
     var supportBelow20;
 
-    for (i = 0; i < newNames.length(); i++) {
+    for (i = 0; i < newNames.length; i++) {
         switch (newNames[i][1]) {
             case "New County":
                 noPP = newNames[i][0];
@@ -72,8 +73,30 @@ function runAlgo(newNames) {
                 pop = newNames[i][0];
                 break;                
         }
+    } 
+
+    if (noPP <= 3) {
+        // remove counties that contain planned parenthoods : hampden, middlesex, suffolk, worcester
+    }
+    if (pop == 0) {
+        // return biggest of what's left (middlesex if not removed) (something else if removed)
+    }
+    if (pop13to44f == 0) {
+        // add a column to dataframe to calculate percentages of middle aged female 
+    }
+    if (support13to44 == 0) {
+        // column proportion of total pop
+    }
+    if (belowPov == 0) {
+        // column proportion of support13to44
+    }
+    if (supportBelow20 == 0) {
+        // proportion of support13to44
     }
 
+
+    return ["hi", "yes", 1, 1, 1, 1, 1];
+    
     
 }
 

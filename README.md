@@ -20,3 +20,5 @@ It would be awesome if we could reach out to Planned Parenthood to possibly use 
 
 1. Now open your web browser (Firefox or Chrome) and navigate to the URL: http://localhost:8000
 
+1. Also: Update the file paths in the PPDataCleaning.py file so that it can correctly access the datasets.
+
