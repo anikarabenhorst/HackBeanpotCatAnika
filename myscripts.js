@@ -1,5 +1,27 @@
 var source;
 
+var df = [['County Name', 'New County', 'Population', ]]
+var df = d3.csv("/Datasets/finalCSV.csv", function(d) {
+    return {
+        county : +d['County Name'],
+        new_loc : +d['New County'],
+        pop : +d['Population'],
+        pop13_44 : +d['Population of Women Aged 13-44'],
+        support13_44 : +d['Number of women who likely need public support for contraceptive services and supplies, ' +
+        'aged 13-44'],
+        poverty20_44 : +d['Number of women who likely need public support for contraceptive services and supplies, ' +
+        'aged 20-44 and below the federal poverty level'],
+        younger_than20 : +d['Number of women who likely need public support for contraceptive services and supplies, ' +
+        'younger than 20'],
+        prop13_44 : +d['Prop 13 to 44'],
+        prop_support : +d['Prop Support 13 to 44'],
+        prop_pov : +d['Prop Poverty of Support 13 to 44'],
+        prop_young : +d['Prop 30 of Support 13 to 44']
+    };
+}).get(function(data) {
+    console.log(data);
+});     
+
 function dragStarted(evt){
     source=evt.target;
     evt.dataTransfer.setData("index.html", evt.target.innerHTML);
@@ -32,7 +54,10 @@ function saveform() {
         return {key:index, value: val}; 
     }) 
 
+    console.log(newNames);
+
     var results = runAlgo(newNames);
+
     console.log(results);
     document.getElementById("result-location").innerHTML = results[0];
     document.getElementById("result-pp").innerHTML = results[1];
@@ -75,28 +100,18 @@ function runAlgo(newNames) {
         }
     } 
 
-    if (noPP <= 3) {
-        // remove counties that contain planned parenthoods : hampden, middlesex, suffolk, worcester
-    }
-    if (pop == 0) {
-        // return biggest of what's left (middlesex if not removed) (something else if removed)
-    }
-    if (pop13to44f == 0) {
-        // add a column to dataframe to calculate percentages of middle aged female 
-    }
-    if (support13to44 == 0) {
-        // column proportion of total pop
-    }
-    if (belowPov == 0) {
-        // column proportion of support13to44
-    }
-    if (supportBelow20 == 0) {
-        // proportion of support13to44
-    }
+    console.log(df[0]);
 
-
-    return ["hi", "yes", 1, 1, 1, 1, 1];
-    
-    
+    return [df[0].county, 
+    df[0].new_loc, 
+    df[0].pop, 
+    df[0].pop13_44, 
+    df[0].support13_44, 
+    df[0].poverty20_44, 
+    df[0].younger_than20];
+     
 }
+
+
+
 

@@ -127,7 +127,7 @@ def county_val_set():
                 'younger than 20'] = w_pub_under_20
     complete_df['Prop 13 to 44'] = complete_df['Population of Women Aged 13-44'] / complete_df['Population']
     complete_df['Prop Support 13 to 44'] = complete_df['Number of women who likely need public support for contraceptive services and supplies, ' +
-                'aged 13-44'] / complete_df['Population']
+                'aged 13-44'] / complete_df['Population of Women Aged 13-44']
     complete_df['Prop Poverty of Support 13 to 44'] = complete_df['Number of women who likely need public support for contraceptive services and supplies, ' +
                 'aged 20-44 and below the federal poverty level'] / complete_df['Number of women who likely need public support for contraceptive services and supplies, ' +
                 'aged 13-44']
@@ -139,7 +139,7 @@ def county_val_set():
 
 
 df = county_val_set()
-print(df)
+df.to_csv("~/Desktop/code/HackBeanpotCatAnika/Datasets/finalCSV.csv")
 
 ########################################################################################################################
 
