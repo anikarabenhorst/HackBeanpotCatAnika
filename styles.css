@@ -23,6 +23,7 @@ body {
     background-image: url(/img/jumbo.jpg);
     height: 600px;
     background-size: cover;
+    text-align: center;
 }
 
 .display-4 {
